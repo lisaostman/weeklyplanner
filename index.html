@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quizley</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="https://unpkg.com/moment"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid leafybkg">
+        <div class="container text-center leafybkg1">
+          <h1 class="display-4">Weekly Planner</h1>
+          <p class="lead">Plan your week with a smile!</p>
+          <p class="currentTime text"></p>
+        </div>
+      </div>
+      <div class="container happyface">
+
+      </div>
+      
+  
+<script>
+    const date = moment();
+    $(".currentTime").text(date);
+    var currentHour= date.format('HH');
+    var currentHourParse = parseInt(currentHour);
+    console.log(currentHour);
+
+    var hours = ["9","10","11","12","13","14","15","16","17"];
+    
+    for (i=0; i<hours.length; i++) 
+    {
+        var hoursParse = parseInt(hours[i]);
+        var whatHour = hours[i];
+        var newCon = $("<div>");
+            newCon.addClass("container");
+        var newRow = $("<div>");
+            newRow.addClass("row");
+        var newDiv = $("<div>");
+            newDiv.addClass("col-md-2 border text-center pt-2");
+            newDiv.css("color","#4b0220");
+            newDiv.attr('id', hours[i]);
+            if (hoursParse > 12) {
+                var hourDisplay = hoursParse - 12;
+                newDiv.text(hourDisplay);
+            } else {
+                var hourDisplay = hoursParse;
+                newDiv.text(hourDisplay);
+            }
+            
+        var newDiv2 = $("<div>");
+            newDiv2.addClass("col-md-8 border pt-2");
+            var textArea = $('<textarea style="padding-left:10px; width: 100%; margin-top: 5px;" />'); 
+            textArea.attr('id', 'hey' + hours[i]);
+            var stored = window.localStorage.getItem(whatHour);
+            
+            textArea.val(stored);
+            newDiv2.append(textArea);
+
+        var newDiv3 = $("<div>");
+            newDiv3.addClass("col-md-2 border border-light text-center pt-2");
+        var newSubmit = $("<input type='image' style='width: 50px;' class='submitType' src='https://img.icons8.com/cotton/2x/save.png' />");
+            newSubmit.attr('id', hours[i]);
+            newSubmit.addClass("btn btn-light");
+
+        newDiv3.append(newSubmit);
+        newRow.append(newDiv);
+        newRow.append(newDiv2);
+        newRow.append(newDiv3);
+        $(".happyface").append(newRow);
+
+        if (currentHour === hours[i]) 
+        {
+            newDiv.addClass("currentTime");
+            newDiv2.addClass("currentTime");
+            newDiv3.addClass("currentTime");
+        } if (currentHour > hoursParse) 
+        {
+            newDiv.addClass("pastTime");
+            newDiv2.addClass("pastTime");
+            newDiv3.addClass("pastTime");
+        } if (currentHour < hoursParse) 
+        {
+            newDiv.addClass("futureTime");
+            newDiv2.addClass("futureTime");
+            newDiv3.addClass("futureTime");
+        }
+    }
+
+
+    $(".submitType").on("click", function() {
+        var idChoice = this.id;
+        var whichText = $('#hey' + idChoice);
+        console.log(whichText);
+        var textInput = whichText.val().trim();
+        
+        console.log(idChoice);
+        localStorage.setItem(idChoice, textInput);
+    })
+
+
+     
+</script>
+
+
+</body>
+
+</html>

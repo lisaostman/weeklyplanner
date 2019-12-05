@@ -1,0 +1,39 @@
+.leafybkg {
+    background-image: url('https://previews.123rf.com/images/tianatena/tianatena1709/tianatena170900113/85205587-watercolor-tropical-leaves-seamless-pattern-watercolour-pink-colored-and-graphic-palm-leaf-painting-.jpg');
+    border-bottom: hotpink solid 1px;
+}
+
+body {
+    background-color: #fffacd;
+}
+
+.leafybkg1 {
+    background-color: pink;
+    padding: 10px 10px 10px 10px;
+    border: hotpink solid 1px;
+    text-shadow: 2px 2px #af0049;
+    color: white;
+}
+
+textarea { border: none; 
+background-color: pink !important;
+outline:0px none transparent;}
+
+.text {
+    text-shadow: none;
+}
+
+.currentTime {
+    background-color: hotpink;
+    border: rgb(100, 0, 30) 1px dotted !important;
+}
+
+.pastTime {
+    background-color: rgb(241, 241, 103);
+    border-bottom: none;
+}
+
+.futureTime {
+    background-color: rgb(245, 143, 169);
+    border-top: none;
+}
