@@ -1,10 +1,10 @@
 .leafybkg {
-    background-image: url('https://previews.123rf.com/images/tianatena/tianatena1709/tianatena170900113/85205587-watercolor-tropical-leaves-seamless-pattern-watercolour-pink-colored-and-graphic-palm-leaf-painting-.jpg');
+    background-image: url('https://previews.123rf.com/images/chfonk/chfonk1705/chfonk170500022/77957861-tropical-leaves-seamless-pattern-of-monstera-philodendron-and-palm-leaves-in-light-green-yellow-colo.jpg');
     border-bottom: hotpink solid 1px;
 }
 
 body {
-    background-color: #fffacd;
+    background-color: #ffffff;
 }
 
 .leafybkg1 {
@@ -24,16 +24,16 @@ outline:0px none transparent;}
 }
 
 .currentTime {
-    background-color: hotpink;
+    background-color: rgb(105, 255, 155);
     border: rgb(100, 0, 30) 1px dotted !important;
 }
 
 .pastTime {
-    background-color: rgb(241, 241, 103);
+    background-color: #fffacd;
     border-bottom: none;
 }
 
 .futureTime {
-    background-color: rgb(245, 143, 169);
+    background-color: rgb(182, 255, 163);
     border-top: none;
 }
