@@ -11,6 +11,6 @@ The application allows you to:
 
 ## What's it look like?
 
-![Image](/assets/images/screenie.png)
+![Image](/assets/images/screenshot.png)
 Have a look for yourself here: [Link](https://lisaostman.github.io/weeklyplanner/)
 
